@@ -48,3 +48,19 @@ test('calculator.add: a + 0', () => {
 test('calculator.add: negative numbers', () => {
   expect(calculator.add(12,-2)).toBe(10)
 })
+
+test('calculator.subtract: simple numbers', () => {
+  expect(calculator.substract(12, 2)).toBe(10)
+})
+
+test('calculator.subtract: negative subtract (a - (-b))', () => {
+  expect(calculator.substract(12, -2)).toBe(14)
+})
+
+test('calculator.subtract: negative subtract (-a - b)', () => {
+  expect(calculator.substract(-12, 2)).toBe(-14)
+})
+
+test('calculator.subtract: negatives', () => {
+  expect(calculator.substract(-12, -2)).toBe(-10)
+})

@@ -11,6 +11,7 @@ const newCalculator = () => {
   const calculator = {}
 
   calculator.add = (a, b) => a + b
+  calculator.substract = (a, b) => a - b
 
   return calculator
 }
