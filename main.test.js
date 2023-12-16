@@ -1,4 +1,4 @@
-const capitalize = require('./main.js')
+import {capitalize} from './main.js'
 
 test('makes first character capitalized', () => {
   expect(capitalize('abcdef')).toBe('Abcdef')
