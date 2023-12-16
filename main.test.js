@@ -37,7 +37,7 @@ test('reverseString: empty string', () => {
 })
 
 let calculator = newCalculator()
-test('calculator.add: two numbers', () => {
+test('calculator.add: positive integers', () => {
   expect(calculator.add(12,32)).toBe(44)
 })
 
@@ -49,7 +49,7 @@ test('calculator.add: negative numbers', () => {
   expect(calculator.add(12,-2)).toBe(10)
 })
 
-test('calculator.subtract: simple numbers', () => {
+test('calculator.subtract: positive integers', () => {
   expect(calculator.substract(12, 2)).toBe(10)
 })
 
@@ -63,4 +63,20 @@ test('calculator.subtract: negative subtract (-a - b)', () => {
 
 test('calculator.subtract: negatives', () => {
   expect(calculator.substract(-12, -2)).toBe(-10)
+})
+
+test('calculator.divide: positive integers', () => {
+  expect(calculator.divide(24, 2)).toBe(12)
+})
+
+test('calculator.divide: a / (-b)', () => {
+  expect(calculator.divide(24, -2)).toBe(-12)
+})
+
+test('calculator.divide: (-a) / b', () => {
+  expect(calculator.divide(-24, 2)).toBe(-12)
+})
+
+test('calculator.divide: float division', () => {
+  expect(calculator.divide(24, 5)).toBe(4.8)
 })
