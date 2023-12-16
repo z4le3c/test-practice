@@ -1,4 +1,4 @@
-import {capitalize, reverseString} from './main.js'
+import { capitalize, reverseString, newCalculator} from './main.js'
 
 test('capitalize: makes first character capitalized', () => {
   expect(capitalize('abcdef')).toBe('Abcdef')
@@ -34,4 +34,17 @@ test('reverseString: one character', () => {
 
 test('reverseString: empty string', () => {
   expect(reverseString('')).toBe('')
+})
+
+let calculator = newCalculator()
+test('calculator.add: two numbers', () => {
+  expect(calculator.add(12,32)).toBe(44)
+})
+
+test('calculator.add: a + 0', () => {
+  expect(calculator.add(12,0)).toBe(12)
+})
+
+test('calculator.add: negative numbers', () => {
+  expect(calculator.add(12,-2)).toBe(10)
 })

@@ -7,4 +7,12 @@ const reverseString = (str) => {
   return str.split('').reverse().join('')
 }
 
-export {capitalize, reverseString}
+const newCalculator = () => {
+  const calculator = {}
+
+  calculator.add = (a, b) => a + b
+
+  return calculator
+}
+
+export { capitalize, reverseString, newCalculator }
