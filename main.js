@@ -13,6 +13,7 @@ const newCalculator = () => {
   calculator.add = (a, b) => a + b
   calculator.substract = (a, b) => a - b
   calculator.divide = (a, b) => a / b
+  calculator.multiply = (a, b) => a * b
 
   return calculator
 }

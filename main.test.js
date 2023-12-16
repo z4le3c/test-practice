@@ -41,6 +41,10 @@ test('calculator.add: positive integers', () => {
   expect(calculator.add(12,32)).toBe(44)
 })
 
+test('calculator.add: float integers', () => {
+  expect(calculator.add(12.2,32.3)).toBe(44.5)
+})
+
 test('calculator.add: a + 0', () => {
   expect(calculator.add(12,0)).toBe(12)
 })
@@ -51,6 +55,10 @@ test('calculator.add: negative numbers', () => {
 
 test('calculator.subtract: positive integers', () => {
   expect(calculator.substract(12, 2)).toBe(10)
+})
+
+test('calculator.subtract: float integers', () => {
+  expect(calculator.substract(12.2, 2.5)).toBe(9.7)
 })
 
 test('calculator.subtract: negative subtract (a - (-b))', () => {
@@ -69,6 +77,10 @@ test('calculator.divide: positive integers', () => {
   expect(calculator.divide(24, 2)).toBe(12)
 })
 
+test('calculator.divide: positive integers', () => {
+  expect(calculator.divide(24.8, 2)).toBe(12.4)
+})
+
 test('calculator.divide: a / (-b)', () => {
   expect(calculator.divide(24, -2)).toBe(-12)
 })
@@ -79,4 +91,16 @@ test('calculator.divide: (-a) / b', () => {
 
 test('calculator.divide: float division', () => {
   expect(calculator.divide(24, 5)).toBe(4.8)
+})
+
+test('calculator.multiply: positive integers', () => {
+  expect(calculator.multiply(3, 4)).toBe(12)
+})
+
+test('calculator.multiply: negative integer', () => {
+  expect(calculator.multiply(3, -4)).toBe(-12)
+})
+
+test('calculator.multiply: float multiplication', () => {
+  expect(calculator.multiply(3.3, 4)).toBe(13.2)
 })
