@@ -12,6 +12,10 @@ test('empty string', () => {
   expect(capitalize('')).toBe('')
 })
 
+test('one character string', () => {
+  expect(capitalize('a')).toBe('A')
+})
+
 test('start with especial characters', () => {
   expect(capitalize('_dawsd')).toBe('_dawsd')
 })
