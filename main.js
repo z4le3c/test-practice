@@ -18,7 +18,6 @@ const newCalculator = () => {
   return calculator
 }
 
-
 const alpha = 'abcdefghijklmnopqrstuvwxyz'
 const map = new Map()
 for (let i = 0; i < alpha.length; i++) {
@@ -38,4 +37,22 @@ const caesarCipher = (str, key) => {
   return output.join('')
 }
 
-export { capitalize, reverseString, newCalculator, caesarCipher }
+const analyzeArray = (arr) => {
+  const obj = {}
+  obj.length = arr.length
+  let sum = 0
+  let min = Infinity
+  let max = -Infinity
+  for (const num of arr) {
+    sum += num
+    if (num < min) min = num
+    if (num > max) max = num
+  }
+  obj.average = sum / arr.length
+  obj.min = min
+  obj.max = max
+
+  return obj
+}
+
+export { capitalize, reverseString, newCalculator, caesarCipher, analyzeArray }
