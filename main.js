@@ -18,4 +18,24 @@ const newCalculator = () => {
   return calculator
 }
 
-export { capitalize, reverseString, newCalculator }
+
+const alpha = 'abcdefghijklmnopqrstuvwxyz'
+const map = new Map()
+for (let i = 0; i < alpha.length; i++) {
+  map.set(alpha[i], i)
+}
+const caesarCipher = (str, key) => {
+  const output = []
+  for (const letter of str) {
+    let index = map.get(letter.toLowerCase())
+    index += key
+    let newIndex = (alpha.length + index) % alpha.length
+    let newLetter = alpha[newIndex]
+    if (!map.has(letter)) newLetter = newLetter.toUpperCase()
+    output.push(newLetter)
+  }
+
+  return output.join('')
+}
+
+export { capitalize, reverseString, newCalculator, caesarCipher }

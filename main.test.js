@@ -1,4 +1,9 @@
-import { capitalize, reverseString, newCalculator} from './main.js'
+import {
+  capitalize,
+  reverseString,
+  newCalculator,
+  caesarCipher
+} from './main.js'
 
 test('capitalize: makes first character capitalized', () => {
   expect(capitalize('abcdef')).toBe('Abcdef')
@@ -38,19 +43,19 @@ test('reverseString: empty string', () => {
 
 let calculator = newCalculator()
 test('calculator.add: positive integers', () => {
-  expect(calculator.add(12,32)).toBe(44)
+  expect(calculator.add(12, 32)).toBe(44)
 })
 
 test('calculator.add: float integers', () => {
-  expect(calculator.add(12.2,32.3)).toBe(44.5)
+  expect(calculator.add(12.2, 32.3)).toBe(44.5)
 })
 
 test('calculator.add: a + 0', () => {
-  expect(calculator.add(12,0)).toBe(12)
+  expect(calculator.add(12, 0)).toBe(12)
 })
 
 test('calculator.add: negative numbers', () => {
-  expect(calculator.add(12,-2)).toBe(10)
+  expect(calculator.add(12, -2)).toBe(10)
 })
 
 test('calculator.subtract: positive integers', () => {
@@ -103,4 +108,24 @@ test('calculator.multiply: negative integer', () => {
 
 test('calculator.multiply: float multiplication', () => {
   expect(calculator.multiply(3.3, 4)).toBe(13.2)
+})
+
+test('caesarCipher: abc shift 1', () => {
+  expect(caesarCipher('abc', 1)).toBe('bcd')
+})
+
+test('caesarCipher: abc shift 3', () => {
+  expect(caesarCipher('abc', 3)).toBe('def')
+})
+
+test('caesarCipher: abc shift -2', () => {
+  expect(caesarCipher('abc', -2)).toBe('yza')
+})
+
+test('caesarCipher: keeping case', () => {
+  expect(caesarCipher('aBc', -2)).toBe('yZa')
+})
+
+test('caesarCipher: empty string', () => {
+  expect(caesarCipher('', 12)).toBe('')
 })
